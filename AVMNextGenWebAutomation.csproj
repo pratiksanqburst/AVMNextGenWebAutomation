@@ -1,0 +1,66 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ExtentReports" Version="4.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0" />
+    <PackageReference Include="NUnit" Version="3.13.2" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.2.0" />
+    <PackageReference Include="RestSharp" Version="110.2.0" />
+    <PackageReference Include="Selenium.Support" Version="4.1.0" />
+    <PackageReference Include="Selenium.WebDriver" Version="4.1.0" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="115.0.5790.10200" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="6.0.0" />
+    <PackageReference Include="System.Net.Http" Version="4.3.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="APITestDataUAT.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>APITestDataUAT.resx</DependentUpon>
+    </Compile>
+    <Compile Update="TestDataQA.Designer.cs">
+      <DependentUpon>TestDataQA.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="TestDataUAT.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TestDataUAT.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="APITestDataUAT.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>APITestDataUAT.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="TestDataQA.resx">
+      <LastGenOutput>TestDataQA.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="TestDataUAT.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TestDataUAT.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="AVMNextGenScreenshots\" />
+  </ItemGroup>
+
+</Project>
